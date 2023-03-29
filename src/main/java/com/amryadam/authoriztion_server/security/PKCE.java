@@ -1,7 +1,5 @@
 package com.amryadam.authoriztion_server.security;
 
-import com.fasterxml.jackson.databind.ser.Serializers;
-
 import java.security.MessageDigest;
 import java.util.Base64;
 import java.util.Random;

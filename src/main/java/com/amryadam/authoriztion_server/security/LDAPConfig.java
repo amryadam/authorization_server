@@ -1,17 +1,21 @@
 package com.amryadam.authoriztion_server.security;
 
+import com.amryadam.authoriztion_server.services.administration.CustomerUserDetailsService;
 import com.amryadam.authoriztion_server.services.administration.JpaUserDetailsService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 
 @Configuration
+@AllArgsConstructor
 public class LDAPConfig {
-    @Autowired
-    private JpaUserDetailsService userDetailsService;
+    private final JpaUserDetailsService userDetailsService;
+
+    private final CustomerUserDetailsService customerUserDetailsService;
+
 
     @Autowired
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -27,7 +31,11 @@ public class LDAPConfig {
                 .passwordAttribute("userPassword");
 
 
+
+        //TODO Separate user(ADMIN) from customer during login
+        // the services are used in the same other they registered
         auth.userDetailsService(userDetailsService);
+        auth.userDetailsService(customerUserDetailsService);
     }
 }
 
