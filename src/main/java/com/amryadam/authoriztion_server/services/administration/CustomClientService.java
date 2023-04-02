@@ -2,6 +2,7 @@ package com.amryadam.authoriztion_server.services.administration;
 
 import com.amryadam.authoriztion_server.entities.administration.Client;
 import com.amryadam.authoriztion_server.repository.administration.ClientRepository;
+
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClient;
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClientRepository;
 import org.springframework.stereotype.Service;
@@ -23,17 +24,17 @@ public class CustomClientService implements RegisteredClientRepository {
 
   @Override
   public RegisteredClient findById(String id) {
-    var client =
-            clientRepository.findById(Long.valueOf(id))
-                    .orElseThrow();
+    var client = clientRepository
+            .findById(id)
+            .orElseThrow(()->null);
     return Client.from(client);
   }
 
   @Override
   public RegisteredClient findByClientId(String clientId) {
-    var client =
-            clientRepository.findByClientId(clientId)
-                    .orElseThrow();
-    return Client.from(client);
+    return clientRepository
+            .findByClientId(clientId)
+            .map((c)->Client.from(c))
+            .orElse(null);
   }
 }

@@ -1,6 +1,5 @@
 package com.amryadam.authoriztion_server.model.administration;
 
-import com.amryadam.authoriztion_server.entities.administration.Customer;
 import com.amryadam.authoriztion_server.entities.administration.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -35,8 +34,6 @@ public class SecurityUser implements UserDetails {
                 .map(SimpleGrantedAuthority::new)
                 .toList();
     }
-
-
 
 
     @Override

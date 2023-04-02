@@ -12,6 +12,7 @@ import lombok.Setter;
 public class Customer {
     @Id
     private String id;
+    private String code;
     private String name;
     private String email;
     private String password;

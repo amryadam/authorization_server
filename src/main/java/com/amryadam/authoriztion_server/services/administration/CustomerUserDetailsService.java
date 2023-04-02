@@ -1,14 +1,14 @@
 package com.amryadam.authoriztion_server.services.administration;
 
-
 import com.amryadam.authoriztion_server.model.administration.SecurityCustomer;
 import com.amryadam.authoriztion_server.repository.administration.CustomerRepository;
-import lombok.AllArgsConstructor;
+
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import lombok.AllArgsConstructor;
 @Service
 @AllArgsConstructor
 public class CustomerUserDetailsService implements UserDetailsService {

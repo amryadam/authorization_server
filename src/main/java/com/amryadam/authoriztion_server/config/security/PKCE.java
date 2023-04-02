@@ -1,4 +1,4 @@
-package com.amryadam.authoriztion_server.security;
+package com.amryadam.authoriztion_server.config.security;
 
 import java.security.MessageDigest;
 import java.util.Base64;

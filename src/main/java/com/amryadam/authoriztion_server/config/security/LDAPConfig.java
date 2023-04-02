@@ -1,4 +1,4 @@
-package com.amryadam.authoriztion_server.security;
+package com.amryadam.authoriztion_server.config.security;
 
 import com.amryadam.authoriztion_server.services.administration.CustomerUserDetailsService;
 import com.amryadam.authoriztion_server.services.administration.JpaUserDetailsService;

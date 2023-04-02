@@ -1,4 +1,4 @@
-package com.amryadam.authoriztion_server.security;
+package com.amryadam.authoriztion_server.config.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
