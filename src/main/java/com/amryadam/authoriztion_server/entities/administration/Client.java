@@ -13,7 +13,9 @@ import org.springframework.security.oauth2.server.authorization.settings.TokenSe
 
 import java.time.Duration;
 
-@Entity @Getter @Setter
+@Entity
+@Getter
+@Setter
 @Table(name = "clients")
 @AllArgsConstructor
 public class Client {
@@ -63,7 +65,7 @@ public class Client {
                 .redirectUri(client.getRedirectUri())
                 .clientAuthenticationMethod(new ClientAuthenticationMethod(client.getAuthMethod()))
                 .authorizationGrantType(new AuthorizationGrantType(client.getGrantType()))
-                .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
+                .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
                 .tokenSettings(TokenSettings.builder()
                         .accessTokenFormat(OAuth2TokenFormat.SELF_CONTAINED) // change to .REFERENCE for  opaque

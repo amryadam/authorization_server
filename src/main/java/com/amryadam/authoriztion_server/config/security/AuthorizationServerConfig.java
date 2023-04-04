@@ -69,6 +69,7 @@ public class AuthorizationServerConfig {
                         .requireAuthorizationConsent(true).build())
                 .tokenSettings(TokenSettings.builder()
                         .refreshTokenTimeToLive(Duration.ofHours(10))
+                        .accessTokenTimeToLive(Duration.ofHours(24))
                         .build())
                 .build();
 

@@ -7,13 +7,14 @@ import com.amryadam.authoriztion_server.services.administration.CustomClientServ
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
 
 
 @AllArgsConstructor
-@Component
+@Service
 public class SampleDataLoader implements CommandLineRunner {
 
 
