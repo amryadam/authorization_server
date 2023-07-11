@@ -2,11 +2,8 @@ package com.amryadam.authoriztion_server;
 
 import com.amryadam.authoriztion_server.entities.administration.Client;
 import com.amryadam.authoriztion_server.services.administration.CustomClientService;
-
-
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
